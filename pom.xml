@@ -18,7 +18,7 @@
 
     <groupId>com.metaring</groupId>
     <artifactId>generator-model</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
 
     <name>MetaRing Generator - Model</name>
     <description>Interfaces for the implementation of code generators for the MetaRing platform</description>
@@ -42,7 +42,7 @@
     <scm>
         <url>https://github.com/metaring/generator-model.git</url>
         <developerConnection>scm:git:git@github.com:metaring/generator-model.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.1.2</tag>
     </scm>
 
     <dependencies>
