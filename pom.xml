@@ -18,7 +18,7 @@
 
     <groupId>com.metaring</groupId>
     <artifactId>generator-model</artifactId>
-    <version>1.2.8-SNAPSHOT</version>
+    <version>1.2.9-SNAPSHOT</version>
 
     <name>MetaRing Generator - Model</name>
     <description>Interfaces for the implementation of code generators for the MetaRing platform</description>
