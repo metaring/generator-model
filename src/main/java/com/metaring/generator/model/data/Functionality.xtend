@@ -21,4 +21,6 @@ interface Functionality extends Element {
     def Attribute getOutput()
     def boolean isReserved()
     def boolean isRestricted()
+    def boolean isVerifyIdentificationData()
+    def boolean isVerifyEnableData()
 }

@@ -16,9 +16,11 @@
 
 package com.metaring.generator.model.util
 
+import com.metaring.generator.model.data.Attribute
+import com.metaring.generator.model.data.Functionality
+import com.metaring.generator.model.data.Module
 import java.util.HashMap
 import java.util.Map
-import com.metaring.generator.model.data.Attribute
 
 final class Extensions {
 
@@ -201,4 +203,27 @@ final class Extensions {
      static final def isManyEmail(Attribute attribute) {
         attribute.isManyNative(NAME_EMAIL)
     }
+
+    static final def isInSamePackage(String first, String second) {
+        (first.contains('.') ? first.substring(0, first.lastIndexOf('.')) : first).equalsIgnoreCase((second.contains('.') ? second.substring(0, second.lastIndexOf('.')) : second))
+    }
+
+    static final def isInThisPackage(String first, String packageFQN) {
+        (first.contains('.') ? first.substring(0, first.lastIndexOf('.')) : first).equalsIgnoreCase(packageFQN)
+    }
+
+    static final def isInThisPackage(String first, CharSequence packageFQN) {
+        (first.contains('.') ? first.substring(0, first.lastIndexOf('.')) : first).equalsIgnoreCase(packageFQN.toString)
+    }
+
+    static final def getDefaultConfigurationFilename() '''metaring.config.default.json'''
+
+    static final def getDefaultConfigurationFileContent(Module root, Functionality verifyIdentificationDataFunctionality, Functionality verifyEnableDataFunctionality) '''{
+    "framework": {
+        "rpc": {
+            "verifyIdentificationDataFunctionality": "«verifyIdentificationDataFunctionality.fullyQualifiedName»"«IF verifyEnableDataFunctionality !== null»,«ENDIF»
+«IF verifyEnableDataFunctionality !== null»            "verifyEnableDataFunctionality": "«verifyEnableDataFunctionality.fullyQualifiedName»"«ENDIF»
+        }
+    }
+}'''
 }

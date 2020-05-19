@@ -16,23 +16,10 @@
 
 package com.metaring.generator.model.factories
 
+import com.metaring.generator.model.data.Functionality
 import com.metaring.generator.model.data.Module
 
 interface ModuleFactory {
-    def String getModuleInfoFilename(Module module)
-    def String getModuleInfoContent(Module module)
-    def String getIdentificationHelperFilename(Module module)
-    def String getIdentificationHelperContent(Module module)
-    def String getIdentificationModuleInfoFilename(Module module)
-    def String getIdentificationModuleInfoContent(Module module)
-    def String getVerifiyIdentificationFunctionalityFilename(Module module)
-    def String getVerifiyIdentificationFunctionalityContent(Module module)
-    def String getLimitedAccessHelperFilename(Module module)
-    def String getLimitedAccessHelperContent(Module module)
-    def String getLimitedAccessModuleInfoFilename(Module module)
-    def String getLimitedAccessModuleInfoContent(Module module)
-    def String getVerifiyEnableFunctionalityFilename(Module module)
-    def String getVerifiyEnableFunctionalityContent(Module module)
-    def String getEmailModuleFilename()
-    def String getEmailModuleContent()
+    def String getDefaultConfigurationFilename(Module root)
+    def String getDefaultConfigurationFileContent(Module root, Functionality verifyIdentificationDataFunctionality, Functionality verifyEnableDataFunctionality)
 }

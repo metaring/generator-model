@@ -17,7 +17,5 @@
 package com.metaring.generator.model.data;
 
 interface Module extends Element {
-    def boolean isForIdentification()
-    def boolean isLimited()
-    def boolean isForEmail()
+    def boolean isRoot()
 }
